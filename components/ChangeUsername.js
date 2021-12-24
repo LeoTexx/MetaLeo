@@ -5,10 +5,12 @@ import Modal from "react-modal";
 function ChangeUsername() {
   const { setUserData, isUserUpdating, userError, user } = useMoralis();
 
-  const updateUsername = () => {
+  const updateUsername = (e) => {
+    e.preventDefault();
     if (!username) return;
 
     setUserData({ username });
+    closeModal();
   };
 
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -65,6 +67,7 @@ function ChangeUsername() {
             />
             <button
               className="border-2 border-pink-500  bg-black rounded-full py-6 px-12 mt-6 font-bold  text-sm lg:text-xl transition-all duration-400 hover:shadow-pink-900 hover:shadow-lg hover:-translate-y-2 active:-translate-y-1 active:shadow-sm"
+              type="submit"
               onClick={updateUsername}
             >
               Update

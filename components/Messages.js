@@ -14,8 +14,8 @@ function Messages() {
   const endOFMessagesRef = useRef(null);
 
   return (
-    <div className="pb-56">
-      <div className="space-y-6 p-4">
+    <div className="pb-56 ">
+      <div className="space-y-6 p-4 ">
         {data.map((message) => (
           <Message key={message.id} message={message} />
         ))}
@@ -23,7 +23,7 @@ function Messages() {
       <div className="flex justify-center">
         <SendMessage endOFMessagesRef={endOFMessagesRef} />
       </div>
-      <div ref={endOFMessagesRef} className="text-center text-gray-400 mt-5">
+      <div ref={endOFMessagesRef} className="text-center text-gray-300 mt-5">
         <p>That's all for now {user.getUsername()}!🚀🎉 </p>
       </div>
     </div>
